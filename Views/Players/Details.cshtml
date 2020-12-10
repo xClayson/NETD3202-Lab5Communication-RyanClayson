@@ -1,0 +1,56 @@
+﻿<!--Ryan Clayson
+ * NETD 3202 - Lab 5 Communication Activity
+ * December 6, 2020
+ * This ASP.NET Core application is designed to allow the user to enter an NBA Player and add it to a database
+ * Added Login Functionality, Registration for new user
+    * Purpose: To Display entry
+-->
+@model NETD3202_Lab5Communication_RyanClayson.Models.Player
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div style="margin-left: 30%; margin-right: 10%;">
+    <div>
+        <h4>Player Details</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                ID
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.playerID)
+            </dd>
+            <dt class="col-sm-2">
+                First Name
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.firstName)
+            </dd>
+            <dt class="col-sm-2">
+                Last Name
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.lastName)
+            </dd>
+            <dt class="col-sm-2">
+                Year Drafted
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.yearDrafted)
+            </dd>
+            <dt class="col-sm-2">
+                Team Name
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.teamName)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a style="color: blue" asp-action="Edit" asp-route-id="@Model.playerID">Edit</a>&nbsp;&nbsp; |
+        <a style="color: blue" asp-controller="PlayerDetails" asp-action="Details" asp-route-id="@Model.playerID">Player Details</a>&nbsp;&nbsp;
+        <a style="color: blue" asp-action="Index">Back to List</a>
+    </div>
+</div>

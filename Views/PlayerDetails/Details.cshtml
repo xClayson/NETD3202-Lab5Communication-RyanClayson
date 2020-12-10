@@ -1,0 +1,50 @@
+﻿<!--Ryan Clayson
+ * NETD 3202 - Lab 5 Comm Actvitiy
+ * December 6, 2020
+ * This ASP.NET Core application is designed to allow the user to enter an NBA Player and add it to a database
+ * Added Login Functionality, Registration for new user
+    * Purpose: To Display Entry
+-->
+@model NETD3202_Lab5Communication_RyanClayson.Models.PlayerDetails
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div style="margin-left: 30%; margin-right: 10%;">
+    <div>
+        <h4> Additonal Info </h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                ID
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.playerID)
+            </dd>
+            <dt class="col-sm-2">
+                Age
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.playerAge)
+            </dd>
+            <dt class="col-sm-2">
+                Height
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.playerHeight)
+            </dd>
+            <dt class="col-sm-2">
+                Weight
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.playerWeight)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a style="color: blue" asp-action="Edit" asp-route-id="@Model.playerID">Edit</a>&nbsp;&nbsp; |
+        <a style="color: blue" asp-controller="Players" asp-action="Details" asp-route-id="@Model.playerID">Other Details</a>&nbsp;&nbsp;
+        <a style="color: blue" asp-action="Index">Back to List</a>
+    </div>
+</div>
