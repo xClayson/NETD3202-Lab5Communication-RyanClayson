@@ -11,7 +11,7 @@
     ViewData["Title"] = "Index";
 }
 
-<div style="margin-left: 20%; margin-right: 10%;">
+<div>
     <h1>NBA Player List</h1>
     <p>
         <a style="color: blue" asp-action="Create">Create New</a>
@@ -19,9 +19,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>
-                    Id
-                </th>
                 <th>
                     First Name
                 </th>
@@ -62,7 +59,7 @@
             }
         </tbody>
     </table>
-    <p class="lead" style="margin-left: 30%; margin-right: 0%;">
+    <p class="lead">
         <a asp-controller="PlayerDetails" asp-action="Index" class="btn btn-primary">Player Details List</a>
     </p>
 </div>

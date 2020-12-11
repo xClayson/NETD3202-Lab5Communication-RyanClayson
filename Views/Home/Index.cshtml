@@ -1,8 +1,22 @@
-﻿@{
+﻿<!--Ryan Clayson
+ * NETD 3202 - Lab 5
+ * December 6, 2020
+ * This ASP.NET Core application is designed to allow the user to enter an NBA Player and add it to a database
+ * Added Login Functionality, Registration for new user
+-->
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div style="margin-left: 15%; margin-right: 10%;">
+    <h1 class="display-4">Welcome to an NBA Player Database!</h1>
+    <hr />
+    <p class="lead">
+        This site uses a database that stores a list of NBA Players and additional information!
+    <p class="lead" style="margin-left: 40%; margin-right: 0%;">
+        <a asp-controller="Players" asp-action="Index" class="btn btn-primary">Enter</a>
+    </p>
+    <img src="~/mj.png" style="width:40%;height:40%;margin-left:0%" alt="Logo" />
+    <img src="~/lebron.png" style="width:20%;height:10%;margin-left:5%" alt="Logo" />
+    <img src="~/curry.jpg" style="width:20%;height:10%;margin-left:5%" alt="Logo" />
 </div>
