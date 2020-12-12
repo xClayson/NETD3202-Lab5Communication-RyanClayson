@@ -59,7 +59,14 @@ namespace NETD3202_Lab5Communication_RyanClayson.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(playerDetails);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception e)
+                {
+                    return RedirectToAction(nameof(IdUnknown));
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(playerDetails);
@@ -95,9 +102,9 @@ namespace NETD3202_Lab5Communication_RyanClayson.Controllers
 
             if (ModelState.IsValid)
             {
+                _context.Update(playerDetails);
                 try
                 {
-                    _context.Update(playerDetails);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -143,6 +150,11 @@ namespace NETD3202_Lab5Communication_RyanClayson.Controllers
             _context.PlayerDetails.Remove(playerDetails);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult IdUnknown()
+        {
+            return View();
         }
 
         private bool PlayerDetailsExists(int id)
