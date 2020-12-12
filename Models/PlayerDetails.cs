@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NETD3202_Lab5Communication_RyanClayson.Models
 {
@@ -13,5 +14,6 @@ namespace NETD3202_Lab5Communication_RyanClayson.Models
         public int playerAge { get; set; } // Age of Player
         public string playerHeight { get; set; }// Height of Player
         public int playerWeight { get; set; } // Weight of Player 
+ 
     }
 }

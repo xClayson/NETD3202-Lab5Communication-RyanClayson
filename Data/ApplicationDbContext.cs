@@ -16,6 +16,7 @@ namespace NETD3202_Lab5Communication_RyanClayson.Data
         }
 
         public DbSet<Player> Players { get; set; }
-        public DbSet<PlayerDetails> PlayerDetails {get; set;}
+        public DbSet<PlayerDetails> PlayerDetails { get; set; }
+
     }
 }
